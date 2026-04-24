@@ -4,6 +4,8 @@ import Navbar from "./layouts/Navbar";
 import TechSkills from "./layouts/TechSkills";
 import Achievements from "./layouts/Achievements";
 import Projects from "./layouts/Projects";
+import Footer from "./layouts/Footer";
+import ConnectMe from "./layouts/ConnectMe";
 function App() {
 
 
@@ -20,6 +22,8 @@ function App() {
         <Projects/>
         <Achievements />
         <TechSkills />
+        <ConnectMe/>
+        <Footer/>
       </div>
 
 

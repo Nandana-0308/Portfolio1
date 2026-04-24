@@ -32,11 +32,11 @@ const experienceData = [
 
 const Education = () => {
   return (
-    <section className="py-12">
+    <section className="py-5">
       
       {/* Heading */}
       <h1 className="text-center text-xl md:text-2xl 
-        text-[var(--color-color6)] mb-16">
+        text-[var(--color-color6)] mb-10">
         Education & Experience
       </h1>
 

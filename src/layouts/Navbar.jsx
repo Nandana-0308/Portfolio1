@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Button from '../components/Button'
 import { Menu, X } from 'lucide-react';
+
 
 const navLinks = [
     { ref: "#about", label: "about" },
@@ -9,12 +10,43 @@ const navLinks = [
     { ref: "#achivments", label: "achivments" },
 ]
 
-
-
 const Navbar = () => {
+
+    
+ // Add scroll logic
+const [showNavbar, setShowNavbar] = useState(true);
+const [lastScrollY, setLastScrollY] = useState(0);
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) {
+                // scrolling down
+                setShowNavbar(false);
+            } else {
+                // scrolling up
+                setShowNavbar(true);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
+   
+
+    // for mobile width -- the menus will be intoa div 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return (
-        <header className="fixed top-0 left-0 right-0 z-50">
+        <header
+            className={`
+                fixed top-0 left-0 right-0 z-50
+                transition-all duration-500
+                ${showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+            `}
+        >
             <nav className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
 
                 {/* Logo */}

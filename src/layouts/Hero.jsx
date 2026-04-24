@@ -1,6 +1,6 @@
 import React from 'react'
 import heropic from '../assets/HeroPic.png'
-import profilepic from '../assets/nan.jpeg'
+import profilepic from '../assets/p.jpeg'
 import { Download } from 'lucide-react';
 
 const Hero = () => {
@@ -17,14 +17,14 @@ const Hero = () => {
 
 
                 {/* profile + content */}
-                <div className='px-7 py-8 flex flex-col items-center gap-8 sm:flex-row  w-screen '>
+                <div className='px-7  flex flex-col items-center gap-8 sm:flex-row  w-screen '>
 
                     {/* Image Container */}
-                    <div className='px-10 relative'>
+                    <div className='px-10 relative '>
                         <img
                             src={profilepic}
                             alt="Profile"
-                            className='mx-auto rounded-full animate-fade-in  object-cover border-4 border-white/10
+                            className='mx-auto  rounded-full animate-fade-in  object-cover border-4 border-white/10
                             w-70 h-auto       /* Default (Mobile) */
                             sm:w-80 sm:h-auto /* Small screens */
                             md:w-90 md:h-auto /* Medium */
